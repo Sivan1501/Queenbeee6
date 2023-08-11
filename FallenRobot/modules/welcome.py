@@ -165,7 +165,7 @@ def new_member(update: Update, context: CallbackContext):
         sent = None
         should_mute = True
         welcome_bool = True
-        media_wel = False
+        media_wel = True
 
         if should_welc:
             reply = update.message.message_id
@@ -176,7 +176,7 @@ def new_member(update: Update, context: CallbackContext):
                     dispatcher.bot.delete_message(chat.id, update.message.message_id)
                 except BadRequest:
                     pass
-                reply = False
+                reply = True
 
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
